@@ -18,13 +18,14 @@ stopButtonElem.onclick = () =>{
     const endDate = endDateElem.value;
 }
 
-chrome.storage.get(["loactionId","startDate","endDate"],(results)=>{
+chrome.storage.local.get(["loactionId","startDate","endDate"],(results)=>{
     const {locationId,startDate,endDate}=results;
+    console.log(results)
     if(locationId){
         locationIdElem.value=locationId
     }
     if(startDate){
-        startButtonElem.value=startDate
+        startDateElem.value=startDate
     }
     if(endDate){
         endDateElem.value=endDate
