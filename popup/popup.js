@@ -18,7 +18,7 @@ stopButtonElem.onclick = () =>{
     const endDate = endDateElem.value;
 }
 
-chrome.storage.local.get(["loactionId","startDate","endDate"],(results)=>{
+chrome.storage.local.get(["loactionId","startDate","endDate","isRunning"],(results)=>{
     const {locationId,startDate,endDate}=results;
     console.log(results)
     if(locationId){
@@ -30,4 +30,6 @@ chrome.storage.local.get(["loactionId","startDate","endDate"],(results)=>{
     if(endDate){
         endDateElem.value=endDate
     }
+
+    console.log("Running Status: ",results.isRunning);
 })
